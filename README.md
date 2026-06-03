@@ -1,0 +1,1 @@
+# batalha-ideias-ranking
