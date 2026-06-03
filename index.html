@@ -166,7 +166,7 @@ header h1{font-size:1rem;font-weight:700;flex:1;}
   <a href="simulacao_perfis.html">👥 Simulação</a>
   <h1>Ranking Unificado — Batalha de Ideias 2026</h1>
   <div class="hbadge" id="hbadge">220 elegíveis · 47 não classificadas</div>
-  <div class="hbadge" title="Última atualização"><span class="material-symbols-outlined" style="font-size:13px;vertical-align:middle;margin-right:3px">schedule</span>03/06/2026 15:59</div>
+  <div class="hbadge" title="Última atualização"><span class="material-symbols-outlined" style="font-size:13px;vertical-align:middle;margin-right:3px">schedule</span>03/06/2026 16:09</div>
 </header>
 
 <div class="tab-bar">
@@ -218,6 +218,7 @@ header h1{font-size:1rem;font-weight:700;flex:1;}
     <div class="f-group wide"><label>Buscar ideia</label><input id="q3" type="text" placeholder="ID, título ou autor..."></div>
     <div class="f-group"><label>Arena</label><select id="arena3"><option value="">Todas</option></select></div>
     <div class="f-group"><label>Tecnologia</label><select id="tec3"><option value="">Todas</option></select></div>
+    <div class="f-group"><label>Motivo de exclusão</label><select id="motivo3"><option value="">Todos</option><option value="aderencia">Sem Aderência</option><option value="ineleg">Não Elegíveis</option><option value="impl">Implementação Prévia</option></select></div>
     <button class="f-clear" onclick="clearFilters(3)">Limpar</button>
     <span class="f-stats" id="stats3"></span>
   </div>
@@ -240,7 +241,7 @@ var DEPTS        = ["COLOG", "COMOT", "DICOF", "DICON", "DIDES", "DIREC", "GEAPE
 var AVS          = ["Adir Cordeiro dos Santos Filho", "Alexandra de Paula Vieira", "Alexandre Henrique Figueiroa De Araujo", "Alline Mendonca Barreto", "Aylane da Silva Teles", "Bruno Martins Guimaraes", "Bruno da Silva Azevedo", "Carlos Alberto Rezende Souza Neto", "Daiany Neves Rosa", "Daniela Dos Santos Batista", "Darcivanio Pereira Monteiro", "Diego Alves da Silva", "Diego Bernardo da Silva Serique", "Diuliene Kelly Campos Rodrigues", "Edmilson de Novais Silva", "Eliezer Rodrigues Oliveira Junior", "Erick Fachetti Pontes", "Fabiano Felix Macedo", "Felipe Barbosa Palma", "Fernanda Aparecida Mota", "Fernando Augusto Rodrigues Bueno", "Gustavo Torres Ferrari", "Hellen Costa Brito", "Heubert Mesentier de Araujo", "Italo Augusto Dias de Souza", "Janderson Balotin", "Jesse Nascimento Mendes", "Joao Paulo da Silva Porto", "Jonathan da Silva Medeiros", "Karla Tayana de Souza", "Leandro Moreira Lopes", "Leonardo Fernandes Leao", "Lilian Tiemi Waku Terner", "Lisia Elias Pereira", "Lucas Lopes Silva", "Manoel Enison Ramos Viana", "Marcelo Augusto Finazzi Santos", "Marcos Mota do Vale", "Miguel Pires Vilella", "Monica Guizzardi Vaillant", "Paloma Sabine Amado Rosa", "Pollyanna Rissatto", "Rafael Henrique Pereira Caixeta", "Rafael Luiz Velozo Santiago", "Raphael Grupilo Nascimento", "Ricardo George Soares da Silva Nascimento", "Ricardo Lenno dos Santos Nazare", "Richard Trevisan Pistori", "Rodolfo Rocha Carvalho", "Roseli Ferreira dos Santos", "Sabrina Abramo Ishio", "Thiago Cunha De Avelar", "Thiago Teixeira Da Silva", "Tulio Marcos Ribeiro Dutra", "Vera Neves Mafra", "Veronica Alves dos Santos", "Wanderlayne Fernandes Do Amaral", "Wellington Felix de Araujo"];
 var CRIT_AVGS    = {"REL": 3.6, "FAC": 3.4, "VIA": 3.3, "DES": 3.4, "INO": 2.8};
 var AV_CRIT_AVGS = {"Rafael Luiz Velozo Santiago": {"REL": 3.7, "INO": 2.8, "DES": 3.6, "VIA": 3.3, "FAC": 3.4}, "Carlos Alberto Rezende Souza Neto": {"REL": 3.5, "INO": 3.0, "DES": 3.4, "VIA": 3.1, "FAC": 3.3}, "Fernanda Aparecida Mota": {"REL": 3.5, "INO": 2.6, "DES": 3.2, "VIA": 3.4, "FAC": 2.8}, "Alline Mendonca Barreto": {"REL": 3.3, "INO": 2.7, "DES": 3.3, "VIA": 3.1, "FAC": 3.6}, "Manoel Enison Ramos Viana": {"REL": 4.2, "INO": 3.3, "DES": 4.1, "VIA": 3.6, "FAC": 3.9}, "Ricardo Lenno dos Santos Nazare": {"REL": 4.0, "INO": 2.7, "DES": 3.7, "VIA": 3.5, "FAC": 3.7}, "Leonardo Fernandes Leao": {"REL": 3.7, "INO": 2.7, "DES": 3.6, "VIA": 3.2, "FAC": 3.3}, "Rafael Henrique Pereira Caixeta": {"REL": 3.3, "INO": 2.1, "DES": 3.6, "VIA": 3.2, "FAC": 3.1}, "Tulio Marcos Ribeiro Dutra": {"REL": 3.7, "INO": 3.2, "DES": 3.6, "VIA": 3.6, "FAC": 3.4}, "Edmilson de Novais Silva": {"REL": 3.4, "INO": 3.1, "DES": 3.3, "VIA": 3.1, "FAC": 3.4}, "Miguel Pires Vilella": {"REL": 3.6, "INO": 3.0, "DES": 3.6, "VIA": 3.2, "FAC": 3.4}, "Paloma Sabine Amado Rosa": {"REL": 3.2, "INO": 3.0, "DES": 3.2, "VIA": 3.2, "FAC": 3.2}, "Karla Tayana de Souza": {"REL": 3.9, "INO": 3.3, "DES": 3.7, "VIA": 3.8, "FAC": 3.9}, "Eliezer Rodrigues Oliveira Junior": {"REL": 3.3, "INO": 2.4, "DES": 3.1, "VIA": 3.2, "FAC": 3.4}, "Fabiano Felix Macedo": {"REL": 4.1, "INO": 3.6, "DES": 4.2, "VIA": 3.6, "FAC": 3.6}, "Wellington Felix de Araujo": {"REL": 3.7, "INO": 2.9, "DES": 3.4, "VIA": 3.0, "FAC": 2.9}, "Felipe Barbosa Palma": {"REL": 3.5, "INO": 2.9, "DES": 3.4, "VIA": 3.5, "FAC": 3.4}, "Jonathan da Silva Medeiros": {"REL": 3.2, "INO": 2.5, "DES": 2.8, "VIA": 2.9, "FAC": 3.1}, "Marcelo Augusto Finazzi Santos": {"REL": 3.6, "INO": 2.7, "DES": 3.7, "VIA": 3.4, "FAC": 3.6}, "Vera Neves Mafra": {"REL": 3.6, "INO": 3.1, "DES": 3.4, "VIA": 3.4, "FAC": 3.5}, "Aylane da Silva Teles": {"REL": 3.2, "INO": 2.8, "DES": 3.5, "VIA": 3.2, "FAC": 3.2}, "Diego Alves da Silva": {"REL": 4.2, "INO": 3.2, "DES": 4.0, "VIA": 4.0, "FAC": 4.2}, "Janderson Balotin": {"REL": 3.5, "INO": 2.5, "DES": 3.4, "VIA": 3.5, "FAC": 3.5}, "Bruno da Silva Azevedo": {"REL": 3.8, "INO": 2.7, "DES": 3.3, "VIA": 3.2, "FAC": 3.1}, "Raphael Grupilo Nascimento": {"REL": 3.7, "INO": 2.7, "DES": 3.7, "VIA": 3.7, "FAC": 3.7}, "Rodolfo Rocha Carvalho": {"REL": 3.9, "INO": 2.9, "DES": 3.3, "VIA": 3.3, "FAC": 3.3}, "Monica Guizzardi Vaillant": {"REL": 3.5, "INO": 3.2, "DES": 3.4, "VIA": 3.1, "FAC": 3.0}, "Heubert Mesentier de Araujo": {"REL": 4.3, "INO": 3.3, "DES": 3.0, "VIA": 3.1, "FAC": 2.6}, "Ricardo George Soares da Silva Nascimento": {"REL": 3.0, "INO": 2.5, "DES": 3.1, "VIA": 2.9, "FAC": 3.3}, "Fernando Augusto Rodrigues Bueno": {"REL": 3.1, "INO": 2.5, "DES": 3.2, "VIA": 3.2, "FAC": 3.2}, "Bruno Martins Guimaraes": {"REL": 4.2, "INO": 2.7, "DES": 3.5, "VIA": 3.4, "FAC": 3.5}, "Wanderlayne Fernandes Do Amaral": {"REL": 3.6, "INO": 2.6, "DES": 3.5, "VIA": 3.4, "FAC": 3.5}, "Marcos Mota do Vale": {"REL": 3.8, "INO": 3.1, "DES": 3.4, "VIA": 3.3, "FAC": 3.8}, "Daiany Neves Rosa": {"REL": 4.0, "INO": 2.8, "DES": 3.5, "VIA": 4.0, "FAC": 3.8}, "Richard Trevisan Pistori": {"REL": 3.7, "INO": 2.7, "DES": 2.9, "VIA": 2.8, "FAC": 3.0}, "Diuliene Kelly Campos Rodrigues": {"REL": 4.0, "INO": 2.0, "DES": 3.0, "VIA": 3.0, "FAC": 3.5}, "Pollyanna Rissatto": {"REL": 3.0, "INO": 3.0, "DES": 2.0, "VIA": 2.0, "FAC": 4.0}, "Adir Cordeiro dos Santos Filho": {"REL": 4.0, "INO": 3.4, "DES": 4.0, "VIA": 3.7, "FAC": 3.7}, "Diego Bernardo da Silva Serique": {"REL": 4.0, "INO": 2.5, "DES": 3.5, "VIA": 3.5, "FAC": 3.5}, "Daniela Dos Santos Batista": {"REL": 3.5, "INO": 2.9, "DES": 3.3, "VIA": 3.3, "FAC": 3.3}, "Italo Augusto Dias de Souza": {"REL": 4.3, "INO": 3.3, "DES": 4.0, "VIA": 3.3, "FAC": 3.3}, "Sabrina Abramo Ishio": {"REL": 4.0, "INO": 3.0, "DES": 4.0, "VIA": 4.0, "FAC": 3.0}, "Lilian Tiemi Waku Terner": {"REL": 3.5, "INO": 3.5, "DES": 3.5, "VIA": 3.0, "FAC": 3.5}, "Leandro Moreira Lopes": {"REL": 4.4, "INO": 3.4, "DES": 3.6, "VIA": 3.5, "FAC": 3.0}, "Jesse Nascimento Mendes": {"REL": 3.3, "INO": 2.7, "DES": 3.4, "VIA": 3.4, "FAC": 3.3}, "Joao Paulo da Silva Porto": {"REL": 4.2, "INO": 2.5, "DES": 3.5, "VIA": 3.2, "FAC": 4.0}, "Roseli Ferreira dos Santos": {"REL": 3.8, "INO": 3.2, "DES": 3.0, "VIA": 3.0, "FAC": 2.8}, "Alexandre Henrique Figueiroa De Araujo": {"REL": 3.3, "INO": 2.8, "DES": 3.3, "VIA": 3.1, "FAC": 3.3}, "Lisia Elias Pereira": {"REL": 4.0, "INO": 4.0, "DES": 4.0, "VIA": 4.0, "FAC": 4.0}, "Hellen Costa Brito": {"REL": 2.0, "INO": 1.0, "DES": 3.0, "VIA": 3.0, "FAC": 2.0}, "Thiago Teixeira Da Silva": {"REL": 5.0, "INO": 4.0, "DES": 3.0, "VIA": 3.0, "FAC": 3.0}, "Darcivanio Pereira Monteiro": {"REL": 5.0, "INO": 4.0, "DES": 3.0, "VIA": 4.0, "FAC": 3.0}, "Veronica Alves dos Santos": {"REL": 5.0, "INO": 4.0, "DES": 4.0, "VIA": 4.0, "FAC": 4.0}, "Alexandra de Paula Vieira": {"REL": 4.0, "INO": 3.5, "DES": 4.0, "VIA": 4.0, "FAC": 4.0}, "Gustavo Torres Ferrari": {"REL": 3.7, "INO": 3.7, "DES": 4.0, "VIA": 4.0, "FAC": 4.0}, "Erick Fachetti Pontes": {"REL": 3.8, "INO": 3.0, "DES": 4.2, "VIA": 4.0, "FAC": 4.0}, "Lucas Lopes Silva": {"REL": 5.0, "INO": 4.0, "DES": 3.0, "VIA": 4.0, "FAC": 2.0}, "Thiago Cunha De Avelar": {"REL": 4.0, "INO": 4.0, "DES": 5.0, "VIA": 5.0, "FAC": 5.0}};
-var DIST_T3_REASONS = [{"label": "Sem Aderência", "n": 39, "color": "#991b1b", "bg": "#fee2e2"}, {"label": "Não Elegíveis (Posto/Estag.)", "n": 7, "color": "#9d174d", "bg": "#fce7f3"}, {"label": "Implementação Prévia", "n": 1, "color": "#92400e", "bg": "#fef3c7"}];
+var DIST_T3_REASONS = [{"top": "aderencia", "label": "ADERENCIA / AVALIACAO", "unit": "Sem Aderencia", "n": 39, "color": "#dc2626"}, {"top": "ineleg", "label": "VINCULO CONTRATUAL", "unit": "Nao Elegiveis", "n": 7, "color": "#9d174d"}, {"top": "impl", "label": "SOLUCAO JA EXISTENTE", "unit": "Impl. Previa", "n": 1, "color": "#d97706"}];
 var DIST_T3_ARENAS  = [{"label": "EOA", "n": 43}, {"label": "NDE", "n": 28}, {"label": "SI", "n": 24}];
 var CHAMPS_T1 = [{"label": "IDEIAS ADERENTES – UNIDADE OPERACIONAL", "unit": "GEREG SE", "n": 38, "top": "todas"}, {"label": "IDEIAS NO TOP 20 – SUPERINTENDENCIA", "unit": "SUPER CN", "n": 4, "top": "top20"}, {"label": "IDEIAS NO TOP 10 – GERENCIA EXECUTIVA", "unit": "GERED", "n": 2, "top": "top10"}, {"label": "IDEIAS NO TOP 5 – DIRETORIA / PRESIDENCIA", "unit": "DITES", "n": 4, "top": "top5"}];
 var CHAMPS_T2 = [{"label": "IDEIAS ADERENTES – UNIDADE OPERACIONAL", "unit": "GEREG SE", "n": 38, "top": "todas"}, {"label": "IDEIAS NO TOP 20 – SUPERINTENDENCIA", "unit": "SUPER CN", "n": 4, "top": "top20"}, {"label": "IDEIAS NO TOP 10 – GERENCIA EXECUTIVA", "unit": "GEAPE", "n": 2, "top": "top10"}, {"label": "IDEIAS NO TOP 5 – DIRETORIA / PRESIDENCIA", "unit": "DITES", "n": 4, "top": "top5"}];
@@ -314,7 +315,8 @@ function clearFilters(t) {
 
 function getF(t) {
   var f = { q: (document.getElementById('q'+t)||{}).value||'', arena: (document.getElementById('arena'+t)||{}).value||'', tec: (document.getElementById('tec'+t)||{}).value||'' };
-  if (t<3) { f.dept = (document.getElementById('dept'+t)||{}).value||''; f.av = (document.getElementById('av'+t)||{}).value||''; } else { f.dept=''; f.av=''; }
+  if (t<3) { f.dept = (document.getElementById('dept'+t)||{}).value||''; f.av = (document.getElementById('av'+t)||{}).value||''; f.motivo=''; }
+  else { f.dept=''; f.av=''; f.motivo=(document.getElementById('motivo3')||{}).value||''; }
   return f;
 }
 
@@ -595,10 +597,13 @@ buildStatBar(DIST_T2, CRIT_AVGS, CHAMPS_T2, 't2');
   var el = document.getElementById('statbar-t3'); if (!el) return;
   var totalNa = DIST_T3_REASONS.reduce(function(s,d){return s+d.n;}, 0);
   var reasons = DIST_T3_REASONS.map(function(d) {
-    return '<div class="pb-stat-row">'
-      + '<span class="pb-stat-badge" style="background:'+d.bg+';color:'+d.color+'">'+d.n+'</span>'
-      + '<span class="pb-stat-lbl">'+d.label+'</span>'
-      + '</div>';
+    return '<div style="padding:3px 0;display:flex;align-items:center;gap:8px">'
+      +'<span style="background:'+d.color+';color:#fff;font-size:1rem;font-weight:800;padding:4px 10px;border-radius:5px;min-width:34px;text-align:center;flex-shrink:0;line-height:1.3;align-self:stretch;display:flex;align-items:center;justify-content:center">'+d.n+'</span>'
+      +'<div style="display:flex;flex-direction:column;justify-content:center;gap:1px">'
+      +'<span style="font-size:0.55rem;font-weight:700;color:'+d.color+';text-transform:uppercase;letter-spacing:.05em;line-height:1.2">'+d.label+'</span>'
+      +'<span style="font-size:0.92rem;font-weight:700;color:#1e293b;line-height:1.2">'+d.unit+'</span>'
+      +'</div>'
+      +'</div>';
   }).join('');
   var maxArena = Math.max.apply(null, DIST_T3_ARENAS.map(function(d){return d.n;}));
   var ARENA_FULL = {EOA:'Eficiência Operacional e Automação', NDE:'Negócios Digitais e Experiência', SI:'Segurança Integrada'};
@@ -657,11 +662,13 @@ function renderTab(t) {
     if (statsEl2) statsEl2.textContent=hasFilter?(list2.length+' resultado'+(list2.length!==1?'s':'')+'  (filtrado)'):(DATA_T2.length+' avaliadas');
   } else {
     // NÃO CLASSIFICADAS — grid unificado com badges por motivo
-    var sc3=DATA_T3_SC.filter(function(x){return matchesFilters(x,f.q,f.arena,f.tec,'','');});
-    var un3=DATA_T3_UN.filter(function(x){return matchesFilters(x,f.q,f.arena,f.tec,'','');});
-    var impl3=DATA_IMPL.filter(function(x){return matchesFilters(x,f.q,f.arena,f.tec,'','');});
-    var reprov3=DATA_REPROV.filter(function(x){return matchesFilters(x,f.q,f.arena,f.tec,'','');});
-    var unsc3=DATA_UNSCORE.filter(function(x){return matchesFilters(x,f.q,f.arena,f.tec,'','');});
+    var motivo=f.motivo||'';
+    var _mf=function(x){return matchesFilters(x,f.q,f.arena,f.tec,'','');};
+    var sc3   =(motivo===''||motivo==='ineleg')   ? DATA_T3_SC.filter(_mf)   : [];
+    var un3   =(motivo===''||motivo==='ineleg')   ? DATA_T3_UN.filter(_mf)   : [];
+    var impl3 =(motivo===''||motivo==='impl')     ? DATA_IMPL.filter(_mf)    : [];
+    var reprov3=(motivo===''||motivo==='aderencia')? DATA_REPROV.filter(_mf) : [];
+    var unsc3 =(motivo===''||motivo==='aderencia')? DATA_UNSCORE.filter(_mf) : [];
     var total3=sc3.length+un3.length+impl3.length+reprov3.length+unsc3.length;
 
     function ncCard(x, badges) {
@@ -699,7 +706,7 @@ function renderTab(t) {
 
 // ── Event listeners para filtros ──
 [1,2,3].forEach(function(t) {
-  ['q','arena','tec','dept','av'].forEach(function(f) {
+  ['q','arena','tec','dept','av','motivo'].forEach(function(f) {
     var el = document.getElementById(f+t);
     if (!el) return;
     var ev = el.tagName === 'INPUT' ? 'input' : 'change';
