@@ -128,6 +128,15 @@ header h1{font-size:1rem;font-weight:700;flex:1;}
 .no-score-chip.na-impl{background:#fef3c7;color:#92400e;border-color:#fde68a;cursor:help;}
 .no-score-chip.na-ader{background:#fee2e2;color:#991b1b;border-color:#fca5a5;cursor:help;}
 .no-score-chip.na-ineleg{background:#fce7f3;color:#9d174d;border-color:#fbcfe8;cursor:help;}
+.relatorios-section{margin-top:32px;padding:16px 20px;background:#fff;border:1px solid var(--borda);border-radius:10px;}
+.relatorios-title{font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--cinza);margin-bottom:12px;}
+.relatorios-grid{display:flex;flex-wrap:wrap;gap:8px;}
+.relatorio-card{display:flex;align-items:center;gap:8px;padding:8px 14px;background:#f8fafc;border:1px solid var(--borda);border-radius:8px;text-decoration:none;color:var(--txt);transition:background .12s,border-color .12s;}
+.relatorio-card:hover{background:#eef2ff;border-color:#c7d2fe;}
+.relatorio-card .rel-icon{font-size:20px;flex-shrink:0;}
+.relatorio-card .rel-info{display:flex;flex-direction:column;gap:1px;}
+.relatorio-card .rel-nome{font-size:0.8rem;font-weight:600;color:#1e293b;}
+.relatorio-card .rel-size{font-size:0.68rem;color:var(--cinza);}
 .dp-legend{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:20px;align-items:center;}
 .dp-leg-item{display:flex;align-items:center;gap:5px;font-size:0.72rem;color:var(--cinza);}
 .dp-leg-dot{width:22px;height:22px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#fff;}
@@ -166,7 +175,7 @@ header h1{font-size:1rem;font-weight:700;flex:1;}
   <a href="simulacao_perfis.html">👥 Simulação</a>
   <h1>Ranking Unificado — Batalha de Ideias 2026</h1>
   <div class="hbadge" id="hbadge">220 elegíveis · 47 não classificadas</div>
-  <div class="hbadge" title="Última atualização"><span class="material-symbols-outlined" style="font-size:13px;vertical-align:middle;margin-right:3px">schedule</span>03/06/2026 16:19</div>
+  <div class="hbadge" title="Última atualização"><span class="material-symbols-outlined" style="font-size:13px;vertical-align:middle;margin-right:3px">schedule</span>03/06/2026 16:21</div>
 </header>
 
 <div class="tab-bar">
@@ -243,8 +252,9 @@ var CRIT_AVGS    = {"REL": 3.6, "FAC": 3.4, "VIA": 3.3, "DES": 3.4, "INO": 2.8};
 var AV_CRIT_AVGS = {"Rafael Luiz Velozo Santiago": {"REL": 3.7, "INO": 2.8, "DES": 3.6, "VIA": 3.3, "FAC": 3.4}, "Carlos Alberto Rezende Souza Neto": {"REL": 3.5, "INO": 3.0, "DES": 3.4, "VIA": 3.1, "FAC": 3.3}, "Fernanda Aparecida Mota": {"REL": 3.5, "INO": 2.6, "DES": 3.2, "VIA": 3.4, "FAC": 2.8}, "Alline Mendonca Barreto": {"REL": 3.3, "INO": 2.7, "DES": 3.3, "VIA": 3.1, "FAC": 3.6}, "Manoel Enison Ramos Viana": {"REL": 4.2, "INO": 3.3, "DES": 4.1, "VIA": 3.6, "FAC": 3.9}, "Ricardo Lenno dos Santos Nazare": {"REL": 4.0, "INO": 2.7, "DES": 3.7, "VIA": 3.5, "FAC": 3.7}, "Leonardo Fernandes Leao": {"REL": 3.7, "INO": 2.7, "DES": 3.6, "VIA": 3.2, "FAC": 3.3}, "Rafael Henrique Pereira Caixeta": {"REL": 3.3, "INO": 2.1, "DES": 3.6, "VIA": 3.2, "FAC": 3.1}, "Tulio Marcos Ribeiro Dutra": {"REL": 3.7, "INO": 3.2, "DES": 3.6, "VIA": 3.6, "FAC": 3.4}, "Edmilson de Novais Silva": {"REL": 3.4, "INO": 3.1, "DES": 3.3, "VIA": 3.1, "FAC": 3.4}, "Miguel Pires Vilella": {"REL": 3.6, "INO": 3.0, "DES": 3.6, "VIA": 3.2, "FAC": 3.4}, "Paloma Sabine Amado Rosa": {"REL": 3.2, "INO": 3.0, "DES": 3.2, "VIA": 3.2, "FAC": 3.2}, "Karla Tayana de Souza": {"REL": 3.9, "INO": 3.3, "DES": 3.7, "VIA": 3.8, "FAC": 3.9}, "Eliezer Rodrigues Oliveira Junior": {"REL": 3.3, "INO": 2.4, "DES": 3.1, "VIA": 3.2, "FAC": 3.4}, "Fabiano Felix Macedo": {"REL": 4.1, "INO": 3.6, "DES": 4.2, "VIA": 3.6, "FAC": 3.6}, "Wellington Felix de Araujo": {"REL": 3.7, "INO": 2.9, "DES": 3.4, "VIA": 3.0, "FAC": 2.9}, "Felipe Barbosa Palma": {"REL": 3.5, "INO": 2.9, "DES": 3.4, "VIA": 3.5, "FAC": 3.4}, "Jonathan da Silva Medeiros": {"REL": 3.2, "INO": 2.5, "DES": 2.8, "VIA": 2.9, "FAC": 3.1}, "Marcelo Augusto Finazzi Santos": {"REL": 3.6, "INO": 2.7, "DES": 3.7, "VIA": 3.4, "FAC": 3.6}, "Vera Neves Mafra": {"REL": 3.6, "INO": 3.1, "DES": 3.4, "VIA": 3.4, "FAC": 3.5}, "Aylane da Silva Teles": {"REL": 3.2, "INO": 2.8, "DES": 3.5, "VIA": 3.2, "FAC": 3.2}, "Diego Alves da Silva": {"REL": 4.2, "INO": 3.2, "DES": 4.0, "VIA": 4.0, "FAC": 4.2}, "Janderson Balotin": {"REL": 3.5, "INO": 2.5, "DES": 3.4, "VIA": 3.5, "FAC": 3.5}, "Bruno da Silva Azevedo": {"REL": 3.8, "INO": 2.7, "DES": 3.3, "VIA": 3.2, "FAC": 3.1}, "Raphael Grupilo Nascimento": {"REL": 3.7, "INO": 2.7, "DES": 3.7, "VIA": 3.7, "FAC": 3.7}, "Rodolfo Rocha Carvalho": {"REL": 3.9, "INO": 2.9, "DES": 3.3, "VIA": 3.3, "FAC": 3.3}, "Monica Guizzardi Vaillant": {"REL": 3.5, "INO": 3.2, "DES": 3.4, "VIA": 3.1, "FAC": 3.0}, "Heubert Mesentier de Araujo": {"REL": 4.3, "INO": 3.3, "DES": 3.0, "VIA": 3.1, "FAC": 2.6}, "Ricardo George Soares da Silva Nascimento": {"REL": 3.0, "INO": 2.5, "DES": 3.1, "VIA": 2.9, "FAC": 3.3}, "Fernando Augusto Rodrigues Bueno": {"REL": 3.1, "INO": 2.5, "DES": 3.2, "VIA": 3.2, "FAC": 3.2}, "Bruno Martins Guimaraes": {"REL": 4.2, "INO": 2.7, "DES": 3.5, "VIA": 3.4, "FAC": 3.5}, "Wanderlayne Fernandes Do Amaral": {"REL": 3.6, "INO": 2.6, "DES": 3.5, "VIA": 3.4, "FAC": 3.5}, "Marcos Mota do Vale": {"REL": 3.8, "INO": 3.1, "DES": 3.4, "VIA": 3.3, "FAC": 3.8}, "Daiany Neves Rosa": {"REL": 4.0, "INO": 2.8, "DES": 3.5, "VIA": 4.0, "FAC": 3.8}, "Richard Trevisan Pistori": {"REL": 3.7, "INO": 2.7, "DES": 2.9, "VIA": 2.8, "FAC": 3.0}, "Diuliene Kelly Campos Rodrigues": {"REL": 4.0, "INO": 2.0, "DES": 3.0, "VIA": 3.0, "FAC": 3.5}, "Pollyanna Rissatto": {"REL": 3.0, "INO": 3.0, "DES": 2.0, "VIA": 2.0, "FAC": 4.0}, "Adir Cordeiro dos Santos Filho": {"REL": 4.0, "INO": 3.4, "DES": 4.0, "VIA": 3.7, "FAC": 3.7}, "Diego Bernardo da Silva Serique": {"REL": 4.0, "INO": 2.5, "DES": 3.5, "VIA": 3.5, "FAC": 3.5}, "Daniela Dos Santos Batista": {"REL": 3.5, "INO": 2.9, "DES": 3.3, "VIA": 3.3, "FAC": 3.3}, "Italo Augusto Dias de Souza": {"REL": 4.3, "INO": 3.3, "DES": 4.0, "VIA": 3.3, "FAC": 3.3}, "Sabrina Abramo Ishio": {"REL": 4.0, "INO": 3.0, "DES": 4.0, "VIA": 4.0, "FAC": 3.0}, "Lilian Tiemi Waku Terner": {"REL": 3.5, "INO": 3.5, "DES": 3.5, "VIA": 3.0, "FAC": 3.5}, "Leandro Moreira Lopes": {"REL": 4.4, "INO": 3.4, "DES": 3.6, "VIA": 3.5, "FAC": 3.0}, "Jesse Nascimento Mendes": {"REL": 3.3, "INO": 2.7, "DES": 3.4, "VIA": 3.4, "FAC": 3.3}, "Joao Paulo da Silva Porto": {"REL": 4.2, "INO": 2.5, "DES": 3.5, "VIA": 3.2, "FAC": 4.0}, "Roseli Ferreira dos Santos": {"REL": 3.8, "INO": 3.2, "DES": 3.0, "VIA": 3.0, "FAC": 2.8}, "Alexandre Henrique Figueiroa De Araujo": {"REL": 3.3, "INO": 2.8, "DES": 3.3, "VIA": 3.1, "FAC": 3.3}, "Lisia Elias Pereira": {"REL": 4.0, "INO": 4.0, "DES": 4.0, "VIA": 4.0, "FAC": 4.0}, "Hellen Costa Brito": {"REL": 2.0, "INO": 1.0, "DES": 3.0, "VIA": 3.0, "FAC": 2.0}, "Thiago Teixeira Da Silva": {"REL": 5.0, "INO": 4.0, "DES": 3.0, "VIA": 3.0, "FAC": 3.0}, "Darcivanio Pereira Monteiro": {"REL": 5.0, "INO": 4.0, "DES": 3.0, "VIA": 4.0, "FAC": 3.0}, "Veronica Alves dos Santos": {"REL": 5.0, "INO": 4.0, "DES": 4.0, "VIA": 4.0, "FAC": 4.0}, "Alexandra de Paula Vieira": {"REL": 4.0, "INO": 3.5, "DES": 4.0, "VIA": 4.0, "FAC": 4.0}, "Gustavo Torres Ferrari": {"REL": 3.7, "INO": 3.7, "DES": 4.0, "VIA": 4.0, "FAC": 4.0}, "Erick Fachetti Pontes": {"REL": 3.8, "INO": 3.0, "DES": 4.2, "VIA": 4.0, "FAC": 4.0}, "Lucas Lopes Silva": {"REL": 5.0, "INO": 4.0, "DES": 3.0, "VIA": 4.0, "FAC": 2.0}, "Thiago Cunha De Avelar": {"REL": 4.0, "INO": 4.0, "DES": 5.0, "VIA": 5.0, "FAC": 5.0}};
 var DIST_T3_REASONS = [{"top": "aderencia", "label": "ADERÊNCIA / AVALIAÇÃO", "unit": "SEM ADERÊNCIA", "n": 39, "color": "#dc2626"}, {"top": "ineleg", "label": "VÍNCULO CONTRATUAL", "unit": "NÃO ELEGÍVEIS", "n": 7, "color": "#9d174d"}, {"top": "impl", "label": "SOLUÇÃO JÁ EXISTENTE", "unit": "IMPLEMENTAÇÃO PRÉVIA", "n": 1, "color": "#d97706"}];
 var DIST_T3_ARENAS  = [{"label": "EOA", "n": 43}, {"label": "NDE", "n": 28}, {"label": "SI", "n": 24}];
-var CHAMPS_T1 = [{"label": "IDEIAS ADERENTES – UNIDADE OPERACIONAL", "unit": "GEREG SE", "n": 38, "top": "todas"}, {"label": "IDEIAS NO TOP 20 – SUPERINTENDENCIA", "unit": "SUPER CN", "n": 4, "top": "top20"}, {"label": "IDEIAS NO TOP 10 – GERENCIA EXECUTIVA", "unit": "GERED", "n": 2, "top": "top10"}, {"label": "IDEIAS NO TOP 5 – DIRETORIA / PRESIDENCIA", "unit": "DITES", "n": 4, "top": "top5"}];
-var CHAMPS_T2 = [{"label": "IDEIAS ADERENTES – UNIDADE OPERACIONAL", "unit": "GEREG SE", "n": 38, "top": "todas"}, {"label": "IDEIAS NO TOP 20 – SUPERINTENDENCIA", "unit": "SUPER CN", "n": 4, "top": "top20"}, {"label": "IDEIAS NO TOP 10 – GERENCIA EXECUTIVA", "unit": "GEAPE", "n": 2, "top": "top10"}, {"label": "IDEIAS NO TOP 5 – DIRETORIA / PRESIDENCIA", "unit": "DITES", "n": 4, "top": "top5"}];
+var CHAMPS_T1   = [{"label": "IDEIAS ADERENTES – UNIDADE OPERACIONAL", "unit": "GEREG SE", "n": 38, "top": "todas"}, {"label": "IDEIAS NO TOP 20 – SUPERINTENDENCIA", "unit": "SUPER CN", "n": 4, "top": "top20"}, {"label": "IDEIAS NO TOP 10 – GERENCIA EXECUTIVA", "unit": "GERED", "n": 2, "top": "top10"}, {"label": "IDEIAS NO TOP 5 – DIRETORIA / PRESIDENCIA", "unit": "DITES", "n": 4, "top": "top5"}];
+var CHAMPS_T2   = [{"label": "IDEIAS ADERENTES – UNIDADE OPERACIONAL", "unit": "GEREG SE", "n": 38, "top": "todas"}, {"label": "IDEIAS NO TOP 20 – SUPERINTENDENCIA", "unit": "SUPER CN", "n": 4, "top": "top20"}, {"label": "IDEIAS NO TOP 10 – GERENCIA EXECUTIVA", "unit": "GEAPE", "n": 2, "top": "top10"}, {"label": "IDEIAS NO TOP 5 – DIRETORIA / PRESIDENCIA", "unit": "DITES", "n": 4, "top": "top5"}];
+var RELATORIOS  = [{"nome": "Exportar-dados-02-06-2026_2149BRT.xlsx", "tamanho": "4.2 MB"}, {"nome": "Inelegiveis_Reprovacao_AEVO.xlsx", "tamanho": "9 KB"}];
 var CRITS     = ['REL','INO','DES','VIA','FAC'];
 var CRIT_NOMES = {REL:'Relevância Estratégica',FAC:'Factibilidade',VIA:'Viabilidade',DES:'Desejabilidade',INO:'Grau de Inovação'};
 var DOT_COLORS = ['#be185d','#7c3aed','#d97706'];
@@ -708,7 +718,24 @@ function renderTab(t) {
         +'<span class="nc-section-count">'+total3+' ideia'+(total3!==1?'s':'')+'</span>'
         +'<span class="nc-section-desc">Não Elegíveis, Sem Aderência, Solução Implementada, em Implementação ou em Processo de Aquisição</span>'
         +'</div><div class="nc-grid">'+allCards+'</div>';
-    el.innerHTML=html3;
+    // ── Relatórios para download ──
+    var relHtml='';
+    if (RELATORIOS && RELATORIOS.length) {
+      var cards=RELATORIOS.map(function(r){
+        return '<a class="relatorio-card" href="'+esc(r.nome)+'" download>'
+          +'<span class="material-symbols-outlined rel-icon" style="font-size:22px;color:#16a34a">table_chart</span>'
+          +'<div class="rel-info">'
+          +'<span class="rel-nome">'+esc(r.nome)+'</span>'
+          +'<span class="rel-size">'+esc(r.tamanho)+' · Excel</span>'
+          +'</div>'
+          +'</a>';
+      }).join('');
+      relHtml='<div class="relatorios-section">'
+        +'<div class="relatorios-title"><span class="material-symbols-outlined" style="font-size:14px;vertical-align:middle;margin-right:4px">download</span>Planilhas disponíveis para download</div>'
+        +'<div class="relatorios-grid">'+cards+'</div>'
+        +'</div>';
+    }
+    el.innerHTML=html3+relHtml;
     var statsEl3=document.getElementById('stats3'); if(statsEl3) statsEl3.textContent=total3+' não classificada'+(total3!==1?'s':'');
   }
 }
